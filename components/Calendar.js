@@ -41,6 +41,7 @@ export default class Calendar extends Component {
     titleFormat: PropTypes.string,
     today: PropTypes.any,
     weekStart: PropTypes.number,
+    list: PropTypes.array
   };
 
   static defaultProps = {
@@ -155,6 +156,22 @@ export default class Calendar extends Component {
     do {
       const dayIndex = renderIndex - offset;
       const isoWeekday = (renderIndex + weekStart) % 7;
+      let bol = false;
+
+      let date = moment(startOfArgMonthMoment).set('date', dayIndex + 1).format('YYYY-M-D');
+      // this.props.list.map(function(item){
+      //   if(date === moment(item).format('YYYY-MM-DD')){
+      //     bol = true;
+      //   }
+      // })
+      if(this.props.list){
+        for(let i =0; i < this.props.list.length; i++){
+          if(date === this.props.list[i]){
+            bol = true;
+            break;
+          }
+        }
+      }
 
       if (dayIndex >= 0 && dayIndex < argMonthDaysCount) {
         days.push((
@@ -166,8 +183,10 @@ export default class Calendar extends Component {
               this.selectDate(moment(startOfArgMonthMoment).set('date', dayIndex + 1));
             }}
             caption={`${dayIndex + 1}`}
-            isToday={argMonthIsToday && (dayIndex === todayIndex)}
-            isSelected={selectedMonthIsArg && (dayIndex === selectedIndex)}
+            // isToday={argMonthIsToday && (dayIndex === todayIndex)}
+            isToday={bol}
+            isSelected={bol}
+            // isSelected={selectedMonthIsArg && (dayIndex === selectedIndex)}
             hasEvent={events && events[dayIndex] === true}
             usingEvents={this.props.eventDates.length > 0}
             customStyle={this.props.customStyle}
