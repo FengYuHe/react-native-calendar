@@ -57,8 +57,10 @@ const styles = StyleSheet.create({
     width: DEVICE_WIDTH / 7,
   },
   day: {
-    fontSize: 16,
+    fontSize: 14,
     alignSelf: 'center',
+    color: '#333',
+    paddingTop: 3
   },
   eventIndicatorFiller: {
     marginTop: 3,
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 14,
   },
   currentDayCircle: {
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
   },
   currentDayText: {
     color: 'red',
@@ -91,11 +93,11 @@ const styles = StyleSheet.create({
   hasEventText: {
   },
   selectedDayText: {
-    color: 'white',
+    // color: 'white',
     fontWeight: 'bold',
   },
   weekendDayText: {
-    color: '#cccccc',
+    color: '#333',
   },
 });
 
