@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
+  Image
 } from 'react-native';
 
 import styles from './styles';
