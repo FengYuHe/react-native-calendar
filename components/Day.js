@@ -83,9 +83,7 @@ export default class Day extends Component {
       <TouchableOpacity onPress={this.props.onPress}>
         <View style={[styles.dayButton, customStyle.dayButton]}>
           <View style={this.dayCircleStyle(isWeekend, isSelected, isToday, hasEvent)}>
-            <Image style={{width: 28,height: 28,}} key={Date.now()} source={isSelected ? require('./img/flower.png') : require('./img/white.png')}>
-              <Text style={this.dayTextStyle(isWeekend, isSelected, isToday, hasEvent)}>{caption}</Text>
-            </Image>
+            <Text style={this.dayTextStyle(isWeekend, isSelected, isToday, hasEvent)}>{caption}</Text>
           </View>
           {usingEvents &&
             <View style={[

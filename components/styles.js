@@ -80,21 +80,21 @@ const styles = StyleSheet.create({
     borderRadius: 14,
   },
   currentDayCircle: {
-    // backgroundColor: 'red',
+    backgroundColor: 'red',
   },
   currentDayText: {
     color: 'red',
   },
   selectedDayCircle: {
-    // backgroundColor: 'black',
+    backgroundColor: 'red',
   },
   hasEventCircle: {
   },
   hasEventText: {
   },
   selectedDayText: {
-    // color: 'white',
-    // fontWeight: 'bold',
+    color: 'white',
+    fontWeight: 'bold',
   },
   weekendDayText: {
     color: '#333',
