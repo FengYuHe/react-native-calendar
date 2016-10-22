@@ -30,6 +30,7 @@ Portrait mode only
   customStyle={{day: {fontSize: 15, textAlign: 'center'}}} // Customize any pre-defined styles
   weekStart={1} // Day on which week starts 0 - Sunday, 1 - Monday, 2 - Tuesday, etc, Default: 1
   list={['2016-8-15', '2016-8-16', '2016-8-17']} //添加指定日期样式，today，selectedDate会失效,因为兼容另一个同事的后台数据，日期格式为: YYYY-M-D
+  showTitle={false} //是否显示头部，默认：True, showControls为true时可能失效
  />
 ```
 

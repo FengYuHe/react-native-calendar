@@ -41,7 +41,8 @@ export default class Calendar extends Component {
     titleFormat: PropTypes.string,
     today: PropTypes.any,
     weekStart: PropTypes.number,
-    list: PropTypes.array
+    list: PropTypes.array,
+    showTitle: PropTypes.bool
   };
 
   static defaultProps = {
@@ -58,6 +59,7 @@ export default class Calendar extends Component {
     titleFormat: 'MMMM YYYY',
     today: moment(),
     weekStart: 1,
+    showTitle: true
   };
 
   componentDidMount() {
@@ -265,9 +267,15 @@ export default class Calendar extends Component {
       )
     : (
       <View style={[styles.calendarControls, this.props.customStyle.calendarControls]}>
-        <Text style={[styles.title, this.props.customStyle.title]}>
-          {this.state.currentMonthMoment.format(this.props.titleFormat)}
-        </Text>
+        {
+          this.props.showTitle ? (
+            <Text style={[styles.title, this.props.customStyle.title]}>
+                {this.state.currentMonthMoment.format(this.props.titleFormat)}
+            </Text>
+          ) : (
+            <View></View>
+          )
+        }
       </View>
     );
   }
